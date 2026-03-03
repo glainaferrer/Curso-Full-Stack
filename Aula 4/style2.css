@@ -1,0 +1,46 @@
+body{
+    background-color: aliceblue;
+    margin: 0;
+    padding: 0;
+    justify-content: center;                   /* Centraliza o conteúdo horizontalmente na tela */
+    align-items: center; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+}
+
+.semafaro{
+    max-width: 100px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: black;
+    border-radius: 5%;
+}
+
+#Vemelho, #Amarelo, #Verde{
+   width: 100PX;      /* Largura*/
+   height: 100px;     /* altura */
+   margin: 15px auto;   
+   padding: 15px;
+   border-radius: 50%;  /* arredondar */
+}
+#vermelho{
+    background-color: red;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+#amarelo{
+    background-color: yellow;
+    width: 70px;
+    height:70px;
+    border-radius: 50%;
+}
+
+#verde{
+    background-color: green;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+
+}

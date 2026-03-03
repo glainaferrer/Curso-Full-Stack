@@ -1,0 +1,90 @@
+/* Definição de Variáveis (Cores e Estilos Globais) */
+:root {                                        /* Seleciona o elemento raiz (geralmente o <html>) para criar variáveis globais */
+    --cor-primaria: #29425d;                   /* Define a variável '--cor-primaria' com um tom de azul escuro */
+    --cor-sucesso: #4f6674;                    /* Define a variável '--cor-sucesso' com uma cor para botões e ações */
+    --cor-fundo: #a6bbcf;                      /* Define a variável '--cor-fundo' com um tom azul-acinzentado claro */
+    --cor-texto: #000000;                      /* Define a variável '--cor-texto' como preto puro para leitura */
+    --borda-raio: 10px;                        /* Define o raio da borda padrão como 10 pixels para arredondamento */
+}                                              /* Fim do bloco de variáveis globais */
+
+body {                                         /* Seleciona o corpo inteiro da página web */
+    margin: 0;                                 /* Remove as margens externas padrão do navegador */
+    font-family: 'Segoe UI', Tahoma, sans-serif; /* Define a fonte do texto e suas alternativas caso a primeira falhe */
+    background-color: var(--cor-fundo);        /* Aplica a cor de fundo usando a variável criada lá em cima no :root */
+    display: flex;                             /* Ativa o Flexbox para facilitar o alinhamento dos elementos filhos */
+    justify-content: center;                   /* Centraliza o conteúdo horizontalmente na tela */
+    align-items: center;                       /* Centraliza o conteúdo verticalmente na tela */
+    min-height: 100vh;                         /* Garante que o corpo ocupe pelo menos 100% da altura visível da tela (viewport) */
+}                                              /* Fim do bloco de estilos do corpo da página */
+
+.card-cadastro {                               /* Seleciona o elemento que tem a classe 'card-cadastro' */
+    background: #ccddec;                       /* Define um fundo azul pastel/claro para o cartão */
+    padding: 2rem;                             /* Adiciona um espaçamento interno de 2rem (aproximadamente 32px) */
+    border-radius: var(--borda-raio);          /* Arredonda os cantos usando a variável de borda (10px) */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);   /* Cria uma sombra suave abaixo do cartão para dar efeito de profundidade */
+    width: 90%;                                /* Faz com que o cartão ocupe 90% da largura disponível (ótimo para celular) */
+    max-width: 450px;                          /* Impede que o cartão cresça mais do que 450px em telas grandes */
+}                                              /* Fim do bloco do cartão de cadastro */
+
+h2 {                                           /* Seleciona todos os títulos de nível 2 (<h2>) */
+    margin-bottom: 1.5rem;                     /* Adiciona um espaço de 1.5rem abaixo do título */
+    color: var(--cor-texto);                   /* Aplica a cor de texto (preto) definida na variável */
+    text-align: center;                        /* Centraliza o texto do título */
+}                                              /* Fim do bloco de título */
+
+/* Container de cada campo (substitui o <br>) */
+.campo {                                       /* Seleciona os elementos com a classe 'campo' (geralmente divs em volta dos inputs) */
+    margin-bottom: 1rem;                       /* Adiciona um espaço de 1rem (aprox 16px) abaixo de cada campo */
+}                                              /* Fim do bloco campo */
+
+/* Colocando CPF e Data lado a lado em telas maiores */
+.campo-duplo {                                 /* Seleciona a classe usada para agrupar campos lado a lado */
+    display: flex;                             /* Ativa o Flexbox para colocar os itens internos em linha */
+    gap: 15px;                                 /* Define um espaço vazio de 15px entre os itens lado a lado */
+}                                              /* Fim do bloco campo-duplo */
+
+label {                                        /* Seleciona os rótulos de texto (labels) dos campos de formulário */
+    display: block;                            /* Faz o label se comportar como um bloco, ocupando a linha inteira acima do input */
+    font-size: 0.9rem;                         /* Deixa a fonte ligeiramente menor que o padrão (90%) */
+    font-weight: 600;                          /* Deixa o texto do label em negrito médio */
+    margin-bottom: 5px;                        /* Dá um pequeno espaço de 5px entre o texto do label e a caixa do input */
+    color: #666;                               /* Pinta o texto do label de cinza médio */
+}                                              /* Fim do bloco de label */
+
+input, select {                                /* Seleciona tanto caixas de texto (inputs) quanto listas de opções (selects) */
+    width: 100%;                               /* Faz com que ocupem 100% da largura disponível do seu container */
+    padding: 12px;                             /* Adiciona 12px de espaço interno para não ficar espremido */
+    border: 1px solid #ddd;                    /* Cria uma borda fina (1px) sólida e cinza claro (#ddd) */
+    border-radius: var(--borda-raio);          /* Arredonda os cantos dos campos usando a variável de 10px */
+    box-sizing: border-box;                    /* Garante que o padding e a borda não aumentem o tamanho total do elemento */
+    transition: all 0.3s ease;                 /* Cria uma animação suave de 0.3s em qualquer mudança (como passar o mouse ou clicar) */
+}                                              /* Fim do bloco de input e select */
+
+input:focus {                                  /* Seleciona o input APENAS quando o usuário clica nele para digitar (estado focus) */
+    border-color: var(--cor-primaria);         /* Muda a cor da borda para a cor primária (azul escuro) */
+    outline: none;                             /* Remove a borda de destaque feia padrão do navegador */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1); /* Cria um halo brilhante (sombra externa) em volta do campo ativo */
+}                                              /* Fim do bloco de focus no input */
+
+button {                                       /* Seleciona todos os botões da página */
+    width: 100%;                               /* Faz o botão esticar de ponta a ponta da div pai */
+    padding: 14px;                             /* Adiciona um bom espaço interno de 14px para facilitar o clique */
+    background-color: var(--cor-sucesso);      /* Pinta o fundo do botão com a cor da variável '--cor-sucesso' */
+    color: white;                              /* Deixa o texto do botão branco */
+    border: none;                              /* Remove as bordas padrão dos botões */
+    border-radius: var(--borda-raio);          /* Arredonda os cantos usando a variável de 10px */
+    font-size: 1rem;                           /* Define o tamanho da fonte para o padrão de 16px (1rem) */
+    font-weight: bold;                         /* Deixa o texto do botão em negrito forte */
+    cursor: pointer;                           /* Transforma a setinha do mouse em uma mãozinha ao passar por cima */
+    margin-top: 10px;                          /* Empurra o botão 10px para baixo, afastando do elemento de cima */
+    transition: transform 0.2s, background 0.3s; /* Cria animações suaves: 0.2s pro movimento e 0.3s pra cor de fundo */
+}                                              /* Fim do bloco padrão do botão */
+
+button:hover {                                 /* Seleciona o botão APENAS quando o mouse passa por cima dele */
+    background-color: #012832;                 /* Muda a cor do botão para um tom verde (substituindo a cor de sucesso padrão) */
+    transform: translateY(-2px);               /* Move o botão visualmente 2 pixels para cima, dando efeito de flutuação */
+}                                              /* Fim do bloco de hover no botão */
+
+button:active {                                /* Seleciona o botão no EXATO MOMENTO em que o clique acontece */
+    transform: translateY(0);                  /* Remove o efeito flutuante (volta pro eixo Y 0), parecendo que foi pressionado */
+}                                              /* Fim do bloco active no botão */
